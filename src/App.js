@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Card from './components/Card.js';
+import DataForm from './components/DataForm.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	//mock data to map out initial state
+	const [people, setPeople] = useState([
+		{ name: "Richard", email: "nope@dope", role: "Student" },
+		{ name: "Steve", email: "stevey@steve", role: "TL" },
+	])
+	return (
+		<div className="App">
+			<DataForm />
+			{people.map(person => <Card person={person} />)}
+		</div>
+	);
 }
 
 export default App;
