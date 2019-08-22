@@ -11,7 +11,7 @@ function App() {
 	])
 	return (
 		<div className="App">
-			<DataForm />
+			<DataForm setPeople={setPeople} />
 			{people.map(person => <Card person={person} />)}
 		</div>
 	);
