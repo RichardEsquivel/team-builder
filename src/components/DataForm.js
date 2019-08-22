@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const DataForm = (props) => {
 	//Deconstructing setPeople out of props this will be used to add people to the end of the people array
-	const { setPeople } = props;
+	const { submitPerson } = props;
 	//creating state to hold person data created in form
 	const [person, setPerson] = useState({ name: "", email: "", role: "" });
 
@@ -13,7 +13,7 @@ const DataForm = (props) => {
 	}
 	const handleSubmit = event => {
 		event.preventDefault();
-		setPeople(people => [...people, person]);
+		submitPerson(person);
 		//This clears the values in the form after submitting
 		setPerson({ name: "", email: "", role: "" });
 	};

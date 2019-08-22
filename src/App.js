@@ -9,9 +9,13 @@ function App() {
 		{ name: "Richard", email: "nope@dope", role: "Student" },
 		{ name: "Steve", email: "stevey@steve", role: "TL" },
 	])
+	//creating variable addPerson which will house value of props setPeople and that will then be passed to DataForm
+	const addPerson = person => {
+		setPeople([...people, person]);
+	};
 	return (
 		<div className="App">
-			<DataForm setPeople={setPeople} />
+			<DataForm submitPerson={addPerson} />
 			{people.map(person => <Card person={person} />)}
 		</div>
 	);
