@@ -1,0 +1,23 @@
+html {
+	font-size: 62.5%;
+}
+
+
+.App {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
+form {
+	display:flex;
+	flex-direction: column;
+	max-width:60%;
+	margin: 2% auto;
+
+}
+
+form input {
+	margin: 2% 0;
+}
+
